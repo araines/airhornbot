@@ -526,6 +526,15 @@ var UMAD *SoundCollection = &SoundCollection{
 		createSound("umad", 1, 250),
 	},
 }
+var RICK *SoundCollection = &SoundCollection{
+	Prefix: "rick",
+	Commands: []string{
+		"!rick",
+	},
+	Sounds: []*Sound{
+		createSound("whatugot", 1, 250),
+	},
+}
 var COLLECTIONS []*SoundCollection = []*SoundCollection{
 	AIRHORN,
 	KHALED,
@@ -566,6 +575,7 @@ var COLLECTIONS []*SoundCollection = []*SoundCollection{
 	FFFF,
 	NEUTRAL,
 	UMAD,
+	RICK,
 }
 // Add Sound Above
 
