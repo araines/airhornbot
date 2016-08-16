@@ -8,7 +8,6 @@ import (
 	"io"
 	"math/rand"
 	"os"
-	"os/exec"
 	"os/signal"
 	"runtime"
 	"strconv"
@@ -19,7 +18,6 @@ import (
 	log "github.com/Sirupsen/logrus"
 	"github.com/bwmarrin/discordgo"
 	"github.com/dustin/go-humanize"
-	"github.com/layeh/gopus"
 	redis "gopkg.in/redis.v3"
 )
 
@@ -76,9 +74,6 @@ type Sound struct {
 
 	// Delay (in milliseconds) for the bot to wait before sending the disconnect request
 	PartDelay int
-
-	// Channel used for the encoder routine
-	encodeChan chan []int16
 
 	// Buffer to store encoded PCM packets
 	buffer [][]byte
@@ -173,23 +168,415 @@ var COW *SoundCollection = &SoundCollection{
 		createSound("x3", 1, 250),
 	},
 }
+var LOWETHAN *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!lowethan",
+	},
+	Sounds: []*Sound{
+		createSound("lowethan", 1, 250),
+	},
+}
 
+var HIGHETHAN *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!highethan",
+	},
+	Sounds: []*Sound{
+		createSound("highethan", 1, 250),
+	},
+}
+
+var MULTIETHAN *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!multiethan",
+	},
+	Sounds: []*Sound{
+		createSound("multiethan", 1, 250),
+	},
+}
+
+var CENANEW *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!truecena",
+	},
+	Sounds: []*Sound{
+		createSound("cena", 1, 250),
+	},
+}
+
+var CAPTAIN *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!captain",
+	},
+	Sounds: []*Sound{
+		createSound("captain", 1, 250),
+	},
+}
+
+var JEFF *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!jeff",
+	},
+	Sounds: []*Sound{
+		createSound("jeff", 1, 250),
+	},
+}
+
+var ETHANCENA *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!ethancena",
+	},
+	Sounds: []*Sound{
+		createSound("ethancena", 1, 250),
+	},
+}
+
+var FUSRODAH *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!fusrodah",
+	},
+	Sounds: []*Sound{
+		createSound("fusrodah", 1, 250),
+	},
+}
+
+var BASE *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!base",
+		"!bass",
+	},
+	Sounds: []*Sound{
+		createSound("base", 1, 250),
+	},
+}
+
+var LEEROY *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!leeroy",
+	},
+	Sounds: []*Sound{
+		createSound("leeroy", 1, 250),
+	},
+}
+
+var LEEROYFULL *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!leeroyfull",
+	},
+	Sounds: []*Sound{
+		createSound("leeroyfull", 1, 250),
+	},
+}
+
+var AKBAR *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!akbar",
+		"!allahuakbar",
+	},
+	Sounds: []*Sound{
+		createSound("akbar", 1, 250),
+	},
+}
+var MAD *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!mad",
+	},
+	Sounds: []*Sound{
+		createSound("mad", 1, 250),
+	},
+}
+
+var CODEC *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!codec",
+	},
+	Sounds: []*Sound{
+		createSound("codec", 1, 250),
+	},
+}
+
+var NTHOU *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!9000",
+	},
+	Sounds: []*Sound{
+		createSound("9000", 1, 250),
+	},
+}
+
+var NTHOUFULL *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!9000full",
+	},
+	Sounds: []*Sound{
+		createSound("9000extended", 1, 250),
+	},
+}
+
+var SURPRISE *SoundCollection = &SoundCollection{
+	Prefix: "surprise",
+	Commands: []string{
+		"!surprise",
+	},
+	Sounds: []*Sound{
+		createSound("disguise", 1, 250),
+		createSound("fries", 1, 250),
+		createSound("pies", 1, 250),
+		createSound("rise", 1, 250),
+		createSound("size", 1, 250),
+		createSound("supplies", 1, 250),
+		createSound("surprise", 1, 250),
+	},
+}
+
+var WOMBO *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!wombo",
+		"!wombocombo",
+	},
+	Sounds: []*Sound{
+		createSound("wombo", 1, 250),
+	},
+}
+
+var LOSE *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!lose",
+	},
+	Sounds: []*Sound{
+		createSound("lose", 1, 250),
+	},
+}
+
+var SPOOKY *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!spooky",
+		"!spoopy",
+	},
+	Sounds: []*Sound{
+		createSound("spooky", 1, 250),
+	},
+}
+
+var ERRYDAY *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!erryday",
+	},
+	Sounds: []*Sound{
+		createSound("erryday", 1, 250),
+	},
+}
+var EMINEM *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!eminem",
+	},
+	Sounds: []*Sound{
+		createSound("eminem", 1, 250),
+	},
+}
+var DARKNESS *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!darkness",
+	},
+	Sounds: []*Sound{
+		createSound("darkness", 1, 250),
+	},
+}
+
+var JOHNCENA *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!morecena",
+	},
+	Sounds: []*Sound{
+		createSound("johncena", 1, 250),
+	},
+}
+var WORLD *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!zawarudo",
+		"!world",
+	},
+	Sounds: []*Sound{
+		createSound("zawarudo", 1, 250),
+	},
+}
+var YOULOSE *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!youlose",
+	},
+	Sounds: []*Sound{
+		createSound("youlose", 1, 250),
+	},
+}
+var ALLIGATOR *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!alligator",
+	},
+	Sounds: []*Sound{
+		createSound("alligator", 1, 250),
+	},
+}
+var NOTIME *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!notime",
+	},
+	Sounds: []*Sound{
+		createSound("notime", 1, 250),
+	},
+}
+var PICCOLO *SoundCollection = &SoundCollection{
+        Prefix: "Piccolo",
+        Commands: []string{
+                "!piccolo",
+        },
+        Sounds: []*Sound{
+                createSound("gohan", 1, 250),
+		createSound("inert", 1, 250),
+		createSound("pants", 1, 250),
+		createSound("shit", 1, 250),
+		createSound("yes", 1, 250),
+		createSound("dende", 1, 250),
+		createSound("difference", 1, 250),
+		createSound("stress", 1, 250),
+		createSound("man", 1, 250),
+        },
+}
+var SHIA *SoundCollection = &SoundCollection{
+	Prefix: "shia",
+	Commands: []string{
+		"!shia",
+	},
+	Sounds: []*Sound{
+		createSound("demotivate", 1, 250),
+		createSound("doit1", 5, 250),
+		createSound("doit2", 5, 250),
+		createSound("doit3", 5, 250),
+		createSound("doit4", 5, 250),
+		createSound("dreams", 5, 250),
+		createSound("nothing", 5, 250),
+		createSound("quit", 5, 250),
+	},
+}
+
+var MARIO *SoundCollection = &SoundCollection{
+	Prefix: "mario",
+	Commands: []string{
+		"!mario",
+	},
+	Sounds: []*Sound{
+		createSound("cena", 1, 250),
+		createSound("eb", 1, 250),
+		createSound("jeff", 1, 250),
+	},
+}
+
+var FFFF *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!ffff",
+	},
+	Sounds: []*Sound{
+		createSound("ffff", 1, 250),
+	},
+}
+
+var NEUTRAL *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!neutral",
+	},
+	Sounds: []*Sound{
+		createSound("neutral", 1, 250),
+	},
+}
+
+var UMAD *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!umad",
+	},
+	Sounds: []*Sound{
+		createSound("umad", 1, 250),
+	},
+}
 var COLLECTIONS []*SoundCollection = []*SoundCollection{
 	AIRHORN,
 	KHALED,
 	CENA,
 	ETHAN,
 	COW,
+	LOWETHAN,
+	HIGHETHAN,
+	MULTIETHAN,
+	CENANEW,
+	CAPTAIN,
+	JEFF,
+	ETHANCENA,
+	FUSRODAH,
+	BASE,
+	LEEROY,
+	LEEROYFULL,
+	AKBAR,
+	MAD,
+	CODEC,
+	NTHOU,
+	NTHOUFULL,
+	SURPRISE,
+	WOMBO,
+	LOSE,
+	SPOOKY,
+	ERRYDAY,
+	EMINEM,
+	DARKNESS,
+	JOHNCENA,
+	//WORLD,
+	YOULOSE,
+	ALLIGATOR,
+	NOTIME,
+	PICCOLO,
+	SHIA,
+	MARIO,
+	FFFF,
+	NEUTRAL,
+	UMAD,
 }
+// Add Sound Above
+
 
 // Create a Sound struct
 func createSound(Name string, Weight int, PartDelay int) *Sound {
 	return &Sound{
-		Name:       Name,
-		Weight:     Weight,
-		PartDelay:  PartDelay,
-		encodeChan: make(chan []int16, 10),
-		buffer:     make([][]byte, 0),
+		Name:      Name,
+		Weight:    Weight,
+		PartDelay: PartDelay,
+		buffer:    make([][]byte, 0),
 	}
 }
 
@@ -216,77 +603,49 @@ func (s *SoundCollection) Random() *Sound {
 	return nil
 }
 
-// Encode reads data from ffmpeg and encodes it using gopus
-func (s *Sound) Encode() {
-	encoder, err := gopus.NewEncoder(48000, 2, gopus.Audio)
-	if err != nil {
-		fmt.Println("NewEncoder Error:", err)
-		return
-	}
-
-	encoder.SetBitrate(BITRATE * 1000)
-	encoder.SetApplication(gopus.Audio)
-
-	for {
-		pcm, ok := <-s.encodeChan
-		if !ok {
-			// if chan closed, exit
-			return
-		}
-
-		// try encoding pcm frame with Opus
-		opus, err := encoder.Encode(pcm, 960, 960*2*2)
-		if err != nil {
-			fmt.Println("Encoding Error:", err)
-			return
-		}
-
-		// Append the PCM frame to our buffer
-		s.buffer = append(s.buffer, opus)
-	}
-}
-
-// Load attempts to load and encode a sound file from disk
+// Load attempts to load an encoded sound file from disk
+// DCA files are pre-computed sound files that are easy to send to Discord.
+// If you would like to create your own DCA files, please use:
+// https://github.com/nstafie/dca-rs
+// eg: dca-rs --raw -i <input wav file> > <output file>
 func (s *Sound) Load(c *SoundCollection) error {
-	s.encodeChan = make(chan []int16, 10)
-	defer close(s.encodeChan)
-	go s.Encode()
+	path := fmt.Sprintf("audio/%v_%v.dca", c.Prefix, s.Name)
 
-	path := fmt.Sprintf("audio/%v_%v.wav", c.Prefix, s.Name)
-	ffmpeg := exec.Command("ffmpeg", "-i", path, "-f", "s16le", "-ar", "48000", "-ac", "2", "pipe:1")
+	file, err := os.Open(path)
 
-	stdout, err := ffmpeg.StdoutPipe()
 	if err != nil {
-		fmt.Println("StdoutPipe Error:", err)
+		fmt.Println("error opening dca file :", err)
 		return err
 	}
 
-	err = ffmpeg.Start()
-	if err != nil {
-		fmt.Println("RunStart Error:", err)
-		ffmpeg.Wait()
-		return err
-	}
+	var opuslen int16
 
 	for {
-		// read data from ffmpeg stdout
-		InBuf := make([]int16, 960*2)
-		err = binary.Read(stdout, binary.LittleEndian, &InBuf)
+		// read opus frame length from dca file
+		err = binary.Read(file, binary.LittleEndian, &opuslen)
 
 		// If this is the end of the file, just return
 		if err == io.EOF || err == io.ErrUnexpectedEOF {
-			ffmpeg.Wait()
 			return nil
 		}
 
 		if err != nil {
-			fmt.Println("error reading from ffmpeg stdout :", err)
-			ffmpeg.Wait()
+			fmt.Println("error reading from dca file :", err)
 			return err
 		}
 
-		// write pcm data to the encodeChan
-		s.encodeChan <- InBuf
+		// read encoded pcm from dca file
+		InBuf := make([]byte, opuslen)
+		err = binary.Read(file, binary.LittleEndian, &InBuf)
+
+		// Should not be any end of file errors
+		if err != nil {
+			fmt.Println("error reading from dca file :", err)
+			return err
+		}
+
+		// append encoded pcm data to the buffer
+		s.buffer = append(s.buffer, InBuf)
 	}
 }
 
@@ -332,8 +691,8 @@ func randomRange(min, max int) int {
 	return rand.Intn(max-min) + min
 }
 
-// Prepares and enqueues a play into the ratelimit/buffer guild queue
-func enqueuePlay(user *discordgo.User, guild *discordgo.Guild, coll *SoundCollection, sound *Sound) {
+// Prepares a play
+func createPlay(user *discordgo.User, guild *discordgo.Guild, coll *SoundCollection, sound *Sound) *Play {
 	// Grab the users voice channel
 	channel := getCurrentVoiceChannel(user, guild)
 	if channel == nil {
@@ -341,7 +700,7 @@ func enqueuePlay(user *discordgo.User, guild *discordgo.Guild, coll *SoundCollec
 			"user":  user.ID,
 			"guild": guild.ID,
 		}).Warning("Failed to find channel to play sound in")
-		return
+		return nil
 	}
 
 	// Create the play
@@ -368,6 +727,16 @@ func enqueuePlay(user *discordgo.User, guild *discordgo.Guild, coll *SoundCollec
 			Sound:     coll.ChainWith.Random(),
 			Forced:    play.Forced,
 		}
+	}
+
+	return play
+}
+
+// Prepares and enqueues a play into the ratelimit/buffer guild queue
+func enqueuePlay(user *discordgo.User, guild *discordgo.Guild, coll *SoundCollection, sound *Sound) {
+	play := createPlay(user, guild, coll, sound)
+	if play == nil {
+		return
 	}
 
 	// Check if we already have a connection to this guild
@@ -472,7 +841,7 @@ func playSound(play *Play, vc *discordgo.VoiceConnection) (err error) {
 
 func onReady(s *discordgo.Session, event *discordgo.Ready) {
 	log.Info("Recieved READY payload")
-	s.UpdateStatus(0, "airhornbot.com")
+	s.UpdateStatus(0, "Materia Discord Trolling")
 }
 
 func onGuildCreate(s *discordgo.Session, event *discordgo.GuildCreate) {
@@ -535,13 +904,93 @@ func displayBotStats(cid string) {
 	discord.ChannelMessageSend(cid, buf.String())
 }
 
+func utilSumRedisKeys(keys []string) int {
+	results := make([]*redis.StringCmd, 0)
+
+	rcli.Pipelined(func(pipe *redis.Pipeline) error {
+		for _, key := range keys {
+			results = append(results, pipe.Get(key))
+		}
+		return nil
+	})
+
+	var total int
+	for _, i := range results {
+		t, _ := strconv.Atoi(i.Val())
+		total += t
+	}
+
+	return total
+}
+
+func displayUserStats(cid, uid string) {
+	keys, err := rcli.Keys(fmt.Sprintf("airhorn:*:user:%s:sound:*", uid)).Result()
+	if err != nil {
+		return
+	}
+
+	totalAirhorns := utilSumRedisKeys(keys)
+	discord.ChannelMessageSend(cid, fmt.Sprintf("Total Airhorns: %v", totalAirhorns))
+}
+
+func displayServerStats(cid, sid string) {
+	keys, err := rcli.Keys(fmt.Sprintf("airhorn:*:guild:%s:sound:*", sid)).Result()
+	if err != nil {
+		return
+	}
+
+	totalAirhorns := utilSumRedisKeys(keys)
+	discord.ChannelMessageSend(cid, fmt.Sprintf("Total Airhorns: %v", totalAirhorns))
+}
+
+func utilGetMentioned(s *discordgo.Session, m *discordgo.MessageCreate) *discordgo.User {
+	for _, mention := range m.Mentions {
+		if mention.ID != s.State.Ready.User.ID {
+			return mention
+		}
+	}
+	return nil
+}
+
+func airhornBomb(cid string, guild *discordgo.Guild, user *discordgo.User, cs string) {
+	count, _ := strconv.Atoi(cs)
+	discord.ChannelMessageSend(cid, ":ok_hand:"+strings.Repeat(":trumpet:", count))
+
+	// Cap it at something
+	if count > 100 {
+		return
+	}
+
+	play := createPlay(user, guild, AIRHORN, nil)
+	vc, err := discord.ChannelVoiceJoin(play.GuildID, play.ChannelID, true, true)
+	if err != nil {
+		return
+	}
+
+	for i := 0; i < count; i++ {
+		AIRHORN.Random().Play(vc)
+	}
+
+	vc.Disconnect()
+}
+
 // Handles bot operator messages, should be refactored (lmao)
 func handleBotControlMessages(s *discordgo.Session, m *discordgo.MessageCreate, parts []string, g *discordgo.Guild) {
 	ourShard := shardContains(g.ID)
 
-	if scontains(parts[len(parts)-1], "stats") && ourShard {
+	if scontains(parts[1], "status") && ourShard {
 		displayBotStats(m.ChannelID)
-	} else if scontains(parts[len(parts)-1], "status") {
+	} else if scontains(parts[1], "stats") && ourShard {
+		if len(m.Mentions) >= 2 {
+			displayUserStats(m.ChannelID, utilGetMentioned(s, m).ID)
+		} else if len(parts) >= 3 {
+			displayUserStats(m.ChannelID, parts[2])
+		} else {
+			displayServerStats(m.ChannelID, g.ID)
+		}
+	} else if scontains(parts[1], "bomb") && len(parts) >= 4 && ourShard {
+		airhornBomb(m.ChannelID, g, utilGetMentioned(s, m), parts[3])
+	} else if scontains(parts[1], "shards") {
 		guilds := 0
 		for _, guild := range s.State.Ready.Guilds {
 			if shardContains(guild.ID) {
@@ -552,19 +1001,31 @@ func handleBotControlMessages(s *discordgo.Session, m *discordgo.MessageCreate, 
 			"Shard %v contains %v servers",
 			strings.Join(SHARDS, ","),
 			guilds))
-	} else if scontains(parts[len(parts)-1], "aps") && ourShard {
+	} else if scontains(parts[1], "aps") && ourShard {
 		s.ChannelMessageSend(m.ChannelID, ":ok_hand: give me a sec m8")
 		go calculateAirhornsPerSecond(m.ChannelID)
+	} else if scontains(parts[len(parts)-1], "where") && ourShard {
+		s.ChannelMessageSend(m.ChannelID,
+			fmt.Sprintf("its a me, shard %v", string(g.ID[len(g.ID)-5])))
+	} else if scontains(parts[1], "changestatus") && ourShard {
+		statusArr := strings.Split(m.Content, " ")
+		status := strings.Join(statusArr[2:len(statusArr)], " ")
+		s.UpdateStatus(0, status)
+	} else if scontains(parts[1], "echo") && ourShard {
+		statusArr := strings.Split(m.Content, " ")
+		status := strings.Join(statusArr[2:len(statusArr)], " ")
+		s.ChannelMessageSend(m.ChannelID, status)
 	}
 	return
 }
 
 func onMessageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
-	if len(m.Content) <= 0 || (m.Content[0] != '!' && len(m.Mentions) != 1) {
+	if len(m.Content) <= 0 || (m.Content[0] != '!' && len(m.Mentions) < 1) {
 		return
 	}
 
-	parts := strings.Split(strings.ToLower(m.Content), " ")
+	msg := strings.Replace(m.ContentWithMentionsReplaced(), s.State.Ready.User.Username, "username", 1)
+	parts := strings.Split(strings.ToLower(msg), " ")
 
 	channel, _ := discord.State.Channel(m.ChannelID)
 	if channel == nil {
@@ -586,8 +1047,16 @@ func onMessageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 	}
 
 	// If this is a mention, it should come from the owner (otherwise we don't care)
-	if len(m.Mentions) > 0 {
-		if m.Mentions[0].ID == s.State.Ready.User.ID && m.Author.ID == OWNER && len(parts) > 0 {
+	if len(m.Mentions) > 0 && m.Author.ID == OWNER && len(parts) > 0 {
+		mentioned := false
+		for _, mention := range m.Mentions {
+			mentioned = (mention.ID == s.State.Ready.User.ID)
+			if mentioned {
+				break
+			}
+		}
+
+		if mentioned {
 			handleBotControlMessages(s, m, parts, guild)
 		}
 		return
@@ -596,6 +1065,16 @@ func onMessageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 	// If it's not relevant to our shard, just exit
 	if !shardContains(guild.ID) {
 		return
+	}
+
+	if (parts[0] == "!listcommands") {
+		var allCommands []string
+		for _, coll := range COLLECTIONS {
+			allCommands = append(allCommands, coll.Commands...);
+		}
+		var outputString string
+		outputString = "Command List: " + strings.Join(allCommands, " ")
+		s.ChannelMessageSend(m.ChannelID, outputString)
 	}
 
 	// Find the collection for the command we got
