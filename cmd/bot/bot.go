@@ -481,7 +481,7 @@ var SHIA *SoundCollection = &SoundCollection{
 		createSound("doit4", 5, 250),
 		createSound("dreams", 5, 250),
 		createSound("nothing", 5, 250),
-		createSound("quit", 5, 250),
+		createSound("quit", 1, 250),
 	},
 }
 
@@ -533,8 +533,747 @@ var RICK *SoundCollection = &SoundCollection{
 	},
 	Sounds: []*Sound{
 		createSound("whatugot", 1, 250),
+		createSound("aids", 1, 250),
+		createSound("maballs", 1, 250),
+		createSound("wuba", 1, 250),
 	},
 }
+var FEELSBAD *SoundCollection = &SoundCollection{
+        Prefix: "custom",
+        Commands: []string{
+                "!feelsbad",
+        },
+        Sounds: []*Sound{
+                createSound("feelsbad", 1, 250),
+        },
+}
+var TWISTED *SoundCollection = &SoundCollection{
+        Prefix: "custom",
+        Commands: []string{
+                "!twisted",
+		"!twistedsister",
+        },
+        Sounds: []*Sound{
+                createSound("twisted", 1, 250),
+        },
+}
+var NIC *SoundCollection = &SoundCollection{
+	Prefix: "nic",
+	Commands: []string{
+		"!nic",
+	},
+Sounds: []*Sound{
+		createSound("rodger", 1, 250),
+		createSound("jaguar", 1, 250),
+		createSound("ahole", 1, 250),
+		createSound("silence", 1, 250),
+		createSound("shark", 1, 250),
+		createSound("hahaa", 1, 250),
+		createSound("aight", 1, 250),
+		createSound("mouth", 1, 250),
+		createSound("cool", 1, 250),
+		createSound("asskick", 1, 250),
+		createSound("bunny", 1, 250),
+		createSound("jungle", 1, 250),
+		createSound("drugyou", 1, 250),
+		createSound("haggis", 1, 250),
+		createSound("littletired", 1, 250),
+		createSound("executioner", 1, 250),
+		createSound("zeus", 1, 250),
+		createSound("donotwant", 1, 250),
+		createSound("expression", 1, 250),
+		createSound("prick", 1, 250),
+		createSound("captainjack", 1, 250),
+		createSound("squarefootage", 1, 250),
+		createSound("killme", 1, 250),
+		createSound("pear", 1, 250),
+		createSound("retard", 1, 250),
+		createSound("notcool", 1, 250),
+		createSound("sidewalk", 1, 250),
+		createSound("pissedblood", 1, 250),
+		createSound("hand", 1, 250),
+		createSound("allgone", 1, 250),
+		createSound("french", 1, 250),
+		createSound("burned", 1, 250),
+		createSound("jokerswild", 1, 250),
+		createSound("abc", 1, 250),
+		createSound("boner", 1, 250),
+		createSound("passingthrough", 1, 250),
+		createSound("knowthatnow", 1, 250),
+		createSound("thereyouare", 1, 250),
+		createSound("gettingthrough", 1, 250),
+		createSound("pressuring", 1, 250),
+		createSound("weewee", 1, 250),
+		createSound("peach", 1, 250),
+		createSound("king", 1, 250),
+		createSound("stinky", 1, 250),
+		createSound("filthy", 1, 250),
+		createSound("switch", 1, 250),
+		createSound("honey", 1, 250),
+		createSound("shameonyou", 1, 250),
+		createSound("misfile", 1, 250),
+		createSound("hallelujah", 1, 250),
+		createSound("goesaway", 1, 250),
+		createSound("imavampire", 1, 250),
+		createSound("bees", 1, 250),
+		createSound("kickyourass", 1, 250),
+		createSound("bullshit", 1, 250),
+		createSound("fuckmexico", 1, 250),
+		createSound("fuckyou", 1, 250),
+		createSound("hiya", 1, 250),
+		createSound("sp1", 1, 250),
+	},
+}
+
+var ERANU *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!eranu",
+	},
+	Sounds: []*Sound{
+		createSound("eranu", 1, 250),
+	},
+}
+
+var FMJ *SoundCollection = &SoundCollection{
+	Prefix: "fmj",
+	Commands: []string{
+		"!fmj",
+	},
+	Sounds: []*Sound{
+		createSound("doyousuck", 1, 250),
+		createSound("shitdown", 1, 250),
+		createSound("sirwhat", 1, 250),
+		createSound("skullfuck", 1, 250),
+		createSound("tiffanycufflinks", 1, 250),
+		createSound("amphibianshit", 1, 250),
+	},
+}
+
+var IDEAGAY *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!totallygay",
+	},
+	Sounds: []*Sound{
+		createSound("ideagay", 1, 250),
+	},
+}
+
+var HAHGAY *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!hahgay",
+	},
+	Sounds: []*Sound{
+		createSound("hahgay", 1, 250),
+	},
+}
+
+var SMOKE *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!smoke",
+	},
+	Sounds: []*Sound{
+		createSound("smoke", 1, 250),
+	},
+}
+
+var OVERWATCH *SoundCollection = &SoundCollection{
+	Prefix: "overwatch",
+	Commands: []string{
+		"!ow",
+		"!overwatch",
+	},
+	Sounds: []*Sound{
+		createSound("dejavu", 1, 250),
+	},
+}
+
+var JABRONI *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!jabroni",
+	},
+	Sounds: []*Sound{
+		createSound("jabroni", 1, 250),
+	},
+}
+
+var MUDA *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!muda",
+	},
+	Sounds: []*Sound{
+		createSound("muda", 1, 250),
+	},
+}
+
+var FEVER *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!fever",
+	},
+	Sounds: []*Sound{
+		createSound("fever", 1, 250),
+	},
+}
+
+var COMEWITHME *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!comewithme",
+	},
+	Sounds: []*Sound{
+		createSound("comewithme", 1, 250),
+	},
+}
+
+var BRERBRER *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!brerbrer",
+		"!fag",
+	},
+	Sounds: []*Sound{
+		createSound("brerbrer", 1, 250),
+	},
+}
+
+var COOKIE *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!cookie",
+	},
+	Sounds: []*Sound{
+		createSound("cookie", 1, 250),
+	},
+}
+
+var PAYLOAD *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!payload",
+	},
+	Sounds: []*Sound{
+		createSound("payload", 1, 250),
+	},
+}
+
+var REDDWARF *SoundCollection = &SoundCollection{
+	Prefix: "reddwarf",
+	Commands: []string{
+		"!reddwarf",
+	},
+	Sounds: []*Sound{
+		createSound("deaddave", 1, 250),
+	},
+}
+
+var CHOPPAH *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!choppah",
+	},
+	Sounds: []*Sound{
+		createSound("choppah", 1, 250),
+	},
+}
+
+var SPACEMARINES *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!spacemarines",
+	},
+	Sounds: []*Sound{
+		createSound("spacemarines", 1, 250),
+	},
+}
+
+var DUKE *SoundCollection = &SoundCollection{
+	Prefix: "duke",
+	Commands: []string{
+		"!duke",
+	},
+	Sounds: []*Sound{
+		createSound("ballsballsballs", 1, 250),
+		createSound("ballsofsteel", 1, 250),
+		createSound("blowitout", 1, 250),
+		createSound("eatshit", 1, 250),
+	},
+}
+var WICKEDSICK *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!wickedsick",
+	},
+	Sounds: []*Sound{
+		createSound("wickedsick", 1, 250),
+	},
+}
+var WINNING *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!winning",
+	},
+	Sounds: []*Sound{
+		createSound("winning", 1, 250),
+	},
+}
+var FUCKED *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!yourefucked",
+	},
+	Sounds: []*Sound{
+		createSound("yourefucked", 1, 250),
+	},
+}
+var ADULT *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!adult",
+	},
+	Sounds: []*Sound{
+		createSound("adult", 1, 250),
+	},
+}
+var AIUR *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!aiur",
+	},
+	Sounds: []*Sound{
+		createSound("aiur", 1, 250),
+	},
+}
+var BROKETHERULES *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!broketherules",
+	},
+	Sounds: []*Sound{
+		createSound("broketherules", 1, 250),
+	},
+}
+var BUTTER *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!butter",
+	},
+	Sounds: []*Sound{
+		createSound("butter", 1, 250),
+	},
+}
+var CHANGE *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!change",
+	},
+	Sounds: []*Sound{
+		createSound("change", 1, 250),
+	},
+}
+var CHINESEFOOD *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!chinesefood",
+	},
+	Sounds: []*Sound{
+		createSound("chinesefood", 1, 250),
+	},
+}
+var DANGERZONE *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!dangerzone",
+	},
+	Sounds: []*Sound{
+		createSound("dangerzone", 1, 250),
+	},
+}
+var DINOSAUR *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!dinosaur",
+	},
+	Sounds: []*Sound{
+		createSound("dinosaur", 1, 250),
+	},
+}
+var FLUFFY *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!fluffy",
+	},
+	Sounds: []*Sound{
+		createSound("fluffy", 1, 250),
+	},
+}
+var GROUND *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!ground",
+	},
+	Sounds: []*Sound{
+		createSound("ground", 1, 250),
+	},
+}
+var HEDGEHOG *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!hedgehog",
+	},
+	Sounds: []*Sound{
+		createSound("hedgehog", 1, 250),
+	},
+}
+var HESAYSNO *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!hesaysno",
+	},
+	Sounds: []*Sound{
+		createSound("hesaysno", 1, 250),
+	},
+}
+var ITSMINE *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!itsmine",
+	},
+	Sounds: []*Sound{
+		createSound("itsmine", 1, 250),
+		createSound("thisismine", 1, 250),
+	},
+}
+var JUSTHADSEX *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!justhadsex",
+	},
+	Sounds: []*Sound{
+		createSound("justhadsex", 1, 250),
+	},
+}
+var LIKDIS *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!likdis",
+	},
+	Sounds: []*Sound{
+		createSound("likdis", 1, 250),
+	},
+}
+var PANCAKE *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!pancake",
+	},
+	Sounds: []*Sound{
+		createSound("pancake", 1, 250),
+	},
+}
+var PUDDI *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!puddi",
+	},
+	Sounds: []*Sound{
+		createSound("puddi", 1, 250),
+	},
+}
+var CARL *SoundCollection = &SoundCollection{
+	Prefix: "carl",
+	Commands: []string{
+		"!carl",
+	},
+	Sounds: []*Sound{
+		createSound("1", 1, 250),
+		createSound("2", 1, 250),
+		createSound("3", 1, 250),
+	},
+}
+var PYLONS *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!additionalpylons",
+	},
+	Sounds: []*Sound{
+		createSound("additionalpylons", 1, 250),
+	},
+}
+var ALWAYS *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!always",
+	},
+	Sounds: []*Sound{
+		createSound("always", 1, 250),
+	},
+}
+var ANDMYAXE *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!andmyaxe",
+	},
+	Sounds: []*Sound{
+		createSound("andmyaxe", 1, 250),
+	},
+}
+var CILLITBANG *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!cillitbang",
+	},
+	Sounds: []*Sound{
+		createSound("cillitbang", 1, 250),
+	},
+}
+var COLDISTHEVOID *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!coldisthevoid",
+	},
+	Sounds: []*Sound{
+		createSound("coldisthevoid", 1, 250),
+	},
+}
+var DISPENSER *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!dispenserhere",
+	},
+	Sounds: []*Sound{
+		createSound("dispenserhere", 1, 250),
+	},
+}
+var FUCKTHEKING *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!fucktheking",
+	},
+	Sounds: []*Sound{
+		createSound("fucktheking", 1, 250),
+	},
+}
+var HOSPITAL *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!hospital",
+	},
+	Sounds: []*Sound{
+		createSound("hospital", 1, 250),
+	},
+}
+var KABOOM *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!kaboom",
+	},
+	Sounds: []*Sound{
+		createSound("kaboom", 1, 250),
+	},
+}
+var LEATHERBELT *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!leatherbelt",
+	},
+	Sounds: []*Sound{
+		createSound("leatherbelt", 1, 250),
+	},
+}
+var MSIXTEEN *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!m16",
+	},
+	Sounds: []*Sound{
+		createSound("m16", 1, 250),
+	},
+}
+var OSTRICHES *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!ostriches",
+	},
+	Sounds: []*Sound{
+		createSound("ostriches", 1, 250),
+	},
+}
+var PYTHON *SoundCollection = &SoundCollection{
+	Prefix: "python",
+	Commands: []string{
+		"!python",
+	},
+	Sounds: []*Sound{
+		createSound("spanishinquisition", 1, 250),
+	},
+}
+var HPC *SoundCollection = &SoundCollection{
+	Prefix: "hpc",
+	Commands: []string{
+		"!hpc",
+	},
+	Sounds: []*Sound{
+		createSound("dangerous", 1, 250),
+		createSound("hardballs", 1, 250),
+	},
+}
+var FOX *SoundCollection = &SoundCollection{
+	Prefix: "fox",
+	Commands: []string{
+		"!fox",
+	},
+	Sounds: []*Sound{
+		createSound("ahuehahee", 1, 250),
+		createSound("awoowoowoo", 1, 250),
+		createSound("pititow", 1, 250),
+		createSound("tatatow", 1, 250),
+		createSound("yoyoyobito", 1, 250),
+	},
+}
+var CHEERS *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!cheers",
+	},
+	Sounds: []*Sound{
+		createSound("cheerslove", 1, 250),
+	},
+}
+
+var CHEERSEARS *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!cheersears",
+	},
+	Sounds: []*Sound{
+		createSound("cheers", 1, 250),
+	},
+}
+
+var BULLETSTORM *SoundCollection = &SoundCollection{
+	Prefix: "bulletstorm",
+	Commands: []string{
+		"!bulletstorm",
+	},
+	Sounds: []*Sound{
+		createSound("heavenly", 1, 250),
+		createSound("retard", 1, 250),
+		createSound("sonofadick", 1, 250),
+		createSound("Whatthedick2", 1, 250),
+		createSound("Whatthedick", 1, 250),
+	},
+}
+
+var MINE *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!mine",
+	},
+	Sounds: []*Sound{
+		createSound("mine", 1, 250),
+	},
+}
+
+var MOVEBITCH *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!movebitch",
+	},
+	Sounds: []*Sound{
+		createSound("movebitch", 1, 250),
+	},
+}
+
+var NYAN *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!nyan",
+	},
+	Sounds: []*Sound{
+		createSound("nyan", 1, 250),
+	},
+}
+
+var ONABOAT *SoundCollection = &SoundCollection{
+	Prefix: "onaboat",
+	Commands: []string{
+		"!onaboat",
+	},
+	Sounds: []*Sound{
+		createSound("1", 1, 250),
+		createSound("2", 1, 250),
+		createSound("3", 1, 250),
+		createSound("5", 1, 250),
+	},
+}
+
+var HIBERNIAN *SoundCollection = &SoundCollection{
+	Prefix: "Hibernian",
+	Commands: []string{
+		"!eggs",
+		"!hibernianeggs",
+	},
+	Sounds: []*Sound{
+		createSound("1", 1, 250),
+		createSound("2", 1, 250),
+	},
+}
+
+var ZAPP *SoundCollection = &SoundCollection{
+	Prefix: "zapp",
+	Commands: []string{
+		"!zapp",
+	},
+	Sounds: []*Sound{
+		createSound("champagne", 1, 250),
+		createSound("checkmate", 1, 250),
+		createSound("chess", 1, 250),
+		createSound("exploding", 1, 250),
+		createSound("fighting", 1, 250),
+		createSound("flag", 1, 250),
+		createSound("gravity", 1, 250),
+		createSound("lower", 1, 250),
+		createSound("sexfully", 1, 250),
+		createSound("sexlexia", 1, 250),
+		createSound("woman", 1, 250),
+	},
+}
+var ONYXIA *SoundCollection = &SoundCollection{
+	Prefix: "onyxia",
+	Commands: []string{
+		"!onyxia",
+	},
+	Sounds: []*Sound{
+		createSound("aggro", 1, 250),
+	},
+}
+var SHAME *SoundCollection = &SoundCollection{
+	Prefix: "shame",
+	Commands: []string{
+		"!shame",
+	},
+	Sounds: []*Sound{
+		createSound("shame", 1, 250),
+	},
+}
+var VICTORY *SoundCollection = &SoundCollection{
+	Prefix: "custom",
+	Commands: []string{
+		"!victory",
+	},
+	Sounds: []*Sound{
+		createSound("victory", 1, 250),
+	},
+}
+
+
+
 var COLLECTIONS []*SoundCollection = []*SoundCollection{
 	AIRHORN,
 	KHALED,
@@ -576,6 +1315,74 @@ var COLLECTIONS []*SoundCollection = []*SoundCollection{
 	NEUTRAL,
 	UMAD,
 	RICK,
+	FEELSBAD,
+	TWISTED,
+	NIC,
+	ERANU,
+	FMJ,
+	IDEAGAY,
+	HAHGAY,
+	SMOKE,
+	OVERWATCH,
+	JABRONI,
+	MUDA,
+	FEVER,
+	COMEWITHME,
+	BRERBRER,
+	COOKIE,
+	PAYLOAD,
+	REDDWARF,
+	CHOPPAH,
+	SPACEMARINES,
+	DUKE,
+	WICKEDSICK,
+	WINNING,
+	FUCKED,
+	ADULT,
+	AIUR,
+	BROKETHERULES,
+	BUTTER,
+	CHANGE,
+	CHINESEFOOD,
+	DANGERZONE,
+	DINOSAUR,
+	FLUFFY,
+	GROUND,
+	HEDGEHOG,
+	HESAYSNO,
+	ITSMINE,
+	JUSTHADSEX,
+	LIKDIS,
+	PANCAKE,
+	PUDDI,
+	CARL,
+	PYLONS,
+	ALWAYS,
+	ANDMYAXE,
+	CILLITBANG,
+	COLDISTHEVOID,
+	DISPENSER,
+	FUCKTHEKING,
+	HOSPITAL,
+	KABOOM,
+	LEATHERBELT,
+	MSIXTEEN,
+	OSTRICHES,
+	PYTHON,
+	HPC,
+	FOX,
+	CHEERS,
+	CHEERSEARS,
+	BULLETSTORM,
+	MINE,
+	MOVEBITCH,
+	NYAN,
+	ONABOAT,
+	HIBERNIAN,
+	ZAPP,
+	ONYXIA,
+	SHAME,
+	VICTORY,
 }
 // Add Sound Above
 
@@ -851,7 +1658,6 @@ func playSound(play *Play, vc *discordgo.VoiceConnection) (err error) {
 
 func onReady(s *discordgo.Session, event *discordgo.Ready) {
 	log.Info("Recieved READY payload")
-	s.UpdateStatus(0, "Materia Discord Trolling")
 }
 
 func onGuildCreate(s *discordgo.Session, event *discordgo.GuildCreate) {
@@ -962,7 +1768,7 @@ func utilGetMentioned(s *discordgo.Session, m *discordgo.MessageCreate) *discord
 	return nil
 }
 
-func airhornBomb(cid string, guild *discordgo.Guild, user *discordgo.User, cs string) {
+func airhornBomb(cid string, guild *discordgo.Guild, user *discordgo.User, cs string, horn string) {
 	count, _ := strconv.Atoi(cs)
 	discord.ChannelMessageSend(cid, ":ok_hand:"+strings.Repeat(":trumpet:", count))
 
@@ -970,15 +1776,28 @@ func airhornBomb(cid string, guild *discordgo.Guild, user *discordgo.User, cs st
 	if count > 100 {
 		return
 	}
+	var toPlay *SoundCollection
+	for _, coll := range COLLECTIONS {
+		if scontains(horn, coll.Commands...) {
+			toPlay = coll
+			break;
+		}
+	}
+	if (toPlay == nil) {
+		return
+	}
 
-	play := createPlay(user, guild, AIRHORN, nil)
+	play := createPlay(user, guild, toPlay, nil)
 	vc, err := discord.ChannelVoiceJoin(play.GuildID, play.ChannelID, true, true)
 	if err != nil {
 		return
 	}
 
 	for i := 0; i < count; i++ {
-		AIRHORN.Random().Play(vc)
+		toPlay.Random().Play(vc)
+		if (horn == "!shame") {
+			AIRHORN.Random().Play(vc)
+		}
 	}
 
 	vc.Disconnect()
@@ -999,7 +1818,11 @@ func handleBotControlMessages(s *discordgo.Session, m *discordgo.MessageCreate, 
 			displayServerStats(m.ChannelID, g.ID)
 		}
 	} else if scontains(parts[1], "bomb") && len(parts) >= 4 && ourShard {
-		airhornBomb(m.ChannelID, g, utilGetMentioned(s, m), parts[3])
+		var horn = "!horn"
+		if len(parts) >= 5 {
+			horn = parts[4]
+		}
+		airhornBomb(m.ChannelID, g, utilGetMentioned(s, m), parts[3], horn)
 	} else if scontains(parts[1], "shards") {
 		guilds := 0
 		for _, guild := range s.State.Ready.Guilds {
@@ -1106,6 +1929,7 @@ func onMessageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 			}
 
 			go enqueuePlay(m.Author, guild, coll, sound)
+			s.ChannelMessageDelete(m.ChannelID, m.ID)
 			return
 		}
 	}
